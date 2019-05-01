@@ -1,0 +1,268 @@
+﻿ <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="MeetingWebsite.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - Reservations</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <link rel="stylesheet" type="text/css" href="Content/main.css" />
+
+        <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+        <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+        <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+        <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+        <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
+        <link rel="stylesheet" type="text/css" href="styles/responsive.css">
+        <link rel="stylesheet" type="text/css" href="styles/bootstrap-datetimepicker.css" />
+
+        <link href='packages/core/main.css' rel='stylesheet' />
+        <link href='packages/daygrid/main.css' rel='stylesheet' />
+        <link href='packages/timegrid/main.css' rel='stylesheet' />
+        <link href='../packages/list/main.css' rel='stylesheet' />
+
+
+        <style>
+            .userMessage {
+                padding-left: 30px;
+                padding-right: 30px;
+                height: 50px;
+                /*  background: #ff5e5e;*/
+                background: #ff5e5e;
+                color: whitesmoke;
+            }
+
+            .userMessageText {
+                vertical-align: middle;
+                line-height: 50px;
+                font: bold;
+                font-size: large;
+            }
+
+            .closeNotification {
+                color: whitesmoke;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+                line-height: 50px;
+            }
+
+                .closeNotification:hover,
+                .closeNotification:focus {
+                    color: gray;
+                    text-decoration: none;
+                    cursor: pointer;
+                }
+        </style>
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                            <div class="logo" style="text-align: center">
+                                <a href="#">
+                                    <img src="images/logo.png" alt=""></a>
+                                <br />
+                                <br />
+                                <h4 id="username" style="color: white;"></h4>
+
+                            </div>
+
+                            <nav class="main_nav">
+                                <ul id="nav">
+                                    <li class="active"><a href="Default">Home</a></li>
+                                    <li><a href="ContactUs">Contact</a></li>
+
+
+                                </ul>
+                            </nav>
+
+
+
+
+                            <div class="phone_num ml-auto">
+
+                                <div class="phone_num_inner">
+                                    <span><a style="color: white;" href="http://ahm43/ALNAEngineering">ALNA Engineering</a></span>
+                                </div>
+                            </div>
+                            <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="userMessage" id="userMessage" style="display: none">
+                <label class="userMessageText" id="txtUserMessage"></label>
+                <span id="clearClicked" onclick="CloseMessage()" runat="server" class="closeNotification">&times;</span>
+            </div>
+        </header>
+
+        <!-- Menu -->
+
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        </asp:ContentPlaceHolder>
+
+        <footer class="footer">
+
+            <div class="footer_bar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="footer_bar_content d-flex flex-row align-items-center justify-content-start">
+                                <div class="cr">
+                                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                    Copyright &copy;<script>document.write(new Date().getFullYear());</script>| ALNA Engineering
+                                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                </div>
+                                <div class="footer_nav">
+                                    <ul>
+                                        <li><a href="Default.aspx">Home</a></li>
+                                        <li><a href="ContactUs.aspx">Contact us</a></li>
+
+                                    </ul>
+                                </div>
+                                <div class="footer_phone ml-auto"><a style="color: #fff;" href="http://ahm43/ALNAEngineering">ALNA Engineering</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </form>
+    <script>
+
+        $(document).ready(function () {
+            var url = window.location;
+            $('#nav').find('.active').removeClass('active');
+            $('#nav li a').each(function () {
+                if (this.href == url.href) {
+                    $(this).parent().addClass('active');
+                }
+            });
+        });
+
+        function CloseMessage() {
+            var message = document.getElementById('userMessage');
+            message.style.display = 'none';
+        }
+
+    </script>
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="styles/bootstrap4/popper.js"></script>
+    <script src="styles/bootstrap4/bootstrap.min.js"></script>
+    <script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+    <script src="plugins/easing/easing.js"></script>
+    <script src="plugins/parallax-js-master/parallax.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script type="text/javascript" src="js/moment.js"></script>
+
+    <script type="text/javascript" src="js/bootstrap-datetimepicker.js"></script>
+    <script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
+    <script type="text/javascript" src="js/locales/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
+
+    <script src='packages/core/main.js'></script>
+    <script src='packages/interaction/main.js'></script>
+    <script src='packages/daygrid/main.js'></script>
+    <script src='packages/timegrid/main.js'></script>
+    <script src='packages/list/main.js'></script>
+    <script type="text/javascript">
+        $(function () {
+            var usrName = escape('<%=@HttpContext.Current.User.Identity.Name.Replace(@"\", @"\\") %>');
+
+            var dataValue = { "username": usrName };
+            Authenticate(dataValue);
+        });
+
+        $(document).ready(function () {
+            if (sessionStorage.getItem("UserMessageText") != "null" && sessionStorage.getItem("UserMessageText") != null) {
+                document.getElementById('userMessage').style.display = 'block';
+                document.getElementById('txtUserMessage').innerHTML = sessionStorage.getItem("UserMessageText");
+                sessionStorage.setItem("UserMessageText", null);
+                if (sessionStorage.getItem("UserMessageColor") != "null" && sessionStorage.getItem("UserMessageColor") != null) {
+                    document.getElementById('userMessage').style.background = sessionStorage.getItem("UserMessageColor");
+                    sessionStorage.setItem("UserMessageColor", null);
+                }
+                if (sessionStorage.getItem("UserMessageTextColor") != "null" && sessionStorage.getItem("UserMessageTextColor") != null) {
+                    document.getElementById('txtUserMessage').style.color = sessionStorage.getItem("UserMessageTextColor");
+                    sessionStorage.setItem("UserMessageTextColor", null);
+                }
+            }
+
+
+
+        });
+
+
+        function Authenticate(dataValue) {
+            //"http://ahm43/connectivitywebapi/api/Authentication"
+            $.ajax({
+                type: "get",
+                url: '<%= ResolveUrl("http://ahm43/connectivitywebapi/api/Authentication") %>',
+                contentType: "application/json; charset=utf-8",
+
+                data: dataValue,
+                success: function (result) {
+                    OnSuccess(result);
+                },
+                error: function (xhr, status, error) {
+                    OnFailure(error);
+                },
+                statusCode: {
+                    401: function (xhr) {
+                        console.log("Unauthorized");
+                    },
+                    404: function (xhr) {
+                        console.log("Not Found");
+                    },
+                    200: function (xhr) {
+                        console.log("Ok");
+                    }
+                }
+            });
+        }
+        function OnSuccess(result) {
+            document.getElementById('username').innerHTML = 'Welcome ' + result.Name;
+            var alna_num = result.Alna_num;
+            sessionStorage.setItem("Alna_num", alna_num);
+        }
+        function OnFailure(error) {
+            document.getElementById('username').innerHTML = 'Failed to login';
+        }
+    </script>
+</body>
+</html>

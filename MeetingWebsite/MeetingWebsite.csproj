@@ -1,0 +1,586 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{603B8796-8CCE-445F-A29C-CB8761F2528D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MeetingWebsite</RootNamespace>
+    <AssemblyName>MeetingWebsite</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication>disabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.0.0\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.1.10.2\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ContactUs.aspx" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="packages\bootstrap\main.css" />
+    <Content Include="packages\bootstrap\main.js" />
+    <Content Include="packages\bootstrap\main.min.css" />
+    <Content Include="packages\bootstrap\main.min.js" />
+    <Content Include="packages\core\locales-all.js" />
+    <Content Include="packages\core\locales-all.min.js" />
+    <Content Include="packages\core\locales\af.js" />
+    <Content Include="packages\core\locales\ar-dz.js" />
+    <Content Include="packages\core\locales\ar-kw.js" />
+    <Content Include="packages\core\locales\ar-ly.js" />
+    <Content Include="packages\core\locales\ar-ma.js" />
+    <Content Include="packages\core\locales\ar-sa.js" />
+    <Content Include="packages\core\locales\ar-tn.js" />
+    <Content Include="packages\core\locales\ar.js" />
+    <Content Include="packages\core\locales\bg.js" />
+    <Content Include="packages\core\locales\bs.js" />
+    <Content Include="packages\core\locales\ca.js" />
+    <Content Include="packages\core\locales\cs.js" />
+    <Content Include="packages\core\locales\da.js" />
+    <Content Include="packages\core\locales\de.js" />
+    <Content Include="packages\core\locales\el.js" />
+    <Content Include="packages\core\locales\en-au.js" />
+    <Content Include="packages\core\locales\en-gb.js" />
+    <Content Include="packages\core\locales\en-nz.js" />
+    <Content Include="packages\core\locales\es-us.js" />
+    <Content Include="packages\core\locales\es.js" />
+    <Content Include="packages\core\locales\et.js" />
+    <Content Include="packages\core\locales\eu.js" />
+    <Content Include="packages\core\locales\fa.js" />
+    <Content Include="packages\core\locales\fi.js" />
+    <Content Include="packages\core\locales\fr-ca.js" />
+    <Content Include="packages\core\locales\fr-ch.js" />
+    <Content Include="packages\core\locales\fr.js" />
+    <Content Include="packages\core\locales\gl.js" />
+    <Content Include="packages\core\locales\he.js" />
+    <Content Include="packages\core\locales\hi.js" />
+    <Content Include="packages\core\locales\hr.js" />
+    <Content Include="packages\core\locales\hu.js" />
+    <Content Include="packages\core\locales\id.js" />
+    <Content Include="packages\core\locales\is.js" />
+    <Content Include="packages\core\locales\it.js" />
+    <Content Include="packages\core\locales\ja.js" />
+    <Content Include="packages\core\locales\ka.js" />
+    <Content Include="packages\core\locales\kk.js" />
+    <Content Include="packages\core\locales\ko.js" />
+    <Content Include="packages\core\locales\lb.js" />
+    <Content Include="packages\core\locales\lt.js" />
+    <Content Include="packages\core\locales\lv.js" />
+    <Content Include="packages\core\locales\mk.js" />
+    <Content Include="packages\core\locales\ms.js" />
+    <Content Include="packages\core\locales\nb.js" />
+    <Content Include="packages\core\locales\nl.js" />
+    <Content Include="packages\core\locales\nn.js" />
+    <Content Include="packages\core\locales\pl.js" />
+    <Content Include="packages\core\locales\pt-br.js" />
+    <Content Include="packages\core\locales\pt.js" />
+    <Content Include="packages\core\locales\ro.js" />
+    <Content Include="packages\core\locales\ru.js" />
+    <Content Include="packages\core\locales\sk.js" />
+    <Content Include="packages\core\locales\sl.js" />
+    <Content Include="packages\core\locales\sq.js" />
+    <Content Include="packages\core\locales\sr-cyrl.js" />
+    <Content Include="packages\core\locales\sr.js" />
+    <Content Include="packages\core\locales\sv.js" />
+    <Content Include="packages\core\locales\th.js" />
+    <Content Include="packages\core\locales\tr.js" />
+    <Content Include="packages\core\locales\uk.js" />
+    <Content Include="packages\core\locales\vi.js" />
+    <Content Include="packages\core\locales\zh-cn.js" />
+    <Content Include="packages\core\locales\zh-tw.js" />
+    <Content Include="packages\core\main.css" />
+    <Content Include="packages\core\main.js" />
+    <Content Include="packages\core\main.min.css" />
+    <Content Include="packages\core\main.min.js" />
+    <Content Include="packages\daygrid\main.css" />
+    <Content Include="packages\daygrid\main.js" />
+    <Content Include="packages\daygrid\main.min.css" />
+    <Content Include="packages\daygrid\main.min.js" />
+    <Content Include="packages\google-calendar\main.js" />
+    <Content Include="packages\google-calendar\main.min.js" />
+    <Content Include="packages\interaction\main.js" />
+    <Content Include="packages\interaction\main.min.js" />
+    <Content Include="packages\list\main.css" />
+    <Content Include="packages\list\main.js" />
+    <Content Include="packages\list\main.min.css" />
+    <Content Include="packages\list\main.min.js" />
+    <Content Include="packages\luxon\main.js" />
+    <Content Include="packages\luxon\main.min.js" />
+    <Content Include="packages\moment-timezone\main.js" />
+    <Content Include="packages\moment-timezone\main.min.js" />
+    <Content Include="packages\moment\main.js" />
+    <Content Include="packages\moment\main.min.js" />
+    <Content Include="packages\rrule\main.js" />
+    <Content Include="packages\rrule\main.min.js" />
+    <Content Include="packages\timegrid\main.css" />
+    <Content Include="packages\timegrid\main.js" />
+    <Content Include="packages\timegrid\main.min.css" />
+    <Content Include="packages\timegrid\main.min.js" />
+    <Content Include="styles\calendar.css" />
+    <Content Include="Content\main.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\Background.png" />
+    <Content Include="images\bg-01.jpg" />
+    <Content Include="images\down.png" />
+    <Content Include="images\high-mountains-of-the-alps.jpg" />
+    <Content Include="images\logo.png" />
+    <Content Include="js\bootstrap-datetimepicker.js" />
+    <Content Include="js\bootstrap-datetimepicker.min.js" />
+    <Content Include="js\calendar.js" />
+    <Content Include="js\locales\bootstrap-datetimepicker.ar.js" />
+    <Content Include="js\locales\bootstrap-datetimepicker.az.js" />
+    <Content Include="js\locales\bootstrap-datetimepicker.bg.js" />
+    <Content Include="js\locales\bootstrap-datetimepicker.bn.js" />
+    <Content Include="js\locales\bootstrap-datetimepicker.ca.js" />
+    <Content Include="js\locales\bootstrap-datetimepicker.cs.js" />
+    <Content Include="js\locales\bootstrap-datetimepicker.da.js" />
+    <Content Include="js\locales\bootstrap-datetimepicker.de.js" />
+    <Content Include="js\locales\bootstrap-datetimepicker.ee.js" />
+    <Content Include="js\locales\bootstrap-datetimepicker.el.js" />
+    <Content Include="js\locales\bootstrap-datetimepicker.es.js" />
+    <Content Include="js\locales\bootstrap-datetimepicker.fi.js" />
+    <Content Include="js\locales\bootstrap-datetimepicker.fr.js" />
+    <Content Include="js\locales\bootstrap-datetimepicker.he.js" />
+    <Content Include="js\locales\bootstrap-datetimepicker.hr.js" />
+    <Content Include="js\locales\bootstrap-datetimepicker.hu.js" />
+    <Content Include="js\locales\bootstrap-datetimepicker.hy.js" />
+    <Content Include="js\locales\bootstrap-datetimepicker.id.js" />
+    <Content Include="js\locales\bootstrap-datetimepicker.is.js" />
+    <Content Include="js\locales\bootstrap-datetimepicker.it.js" />
+    <Content Include="js\locales\bootstrap-datetimepicker.ja.js" />
+    <Content Include="js\locales\bootstrap-datetimepicker.ka.js" />
+    <Content Include="js\locales\bootstrap-datetimepicker.ko.js" />
+    <Content Include="js\locales\bootstrap-datetimepicker.lt.js" />
+    <Content Include="js\locales\bootstrap-datetimepicker.lv.js" />
+    <Content Include="js\locales\bootstrap-datetimepicker.ms.js" />
+    <Content Include="js\locales\bootstrap-datetimepicker.nb.js" />
+    <Content Include="js\locales\bootstrap-datetimepicker.nl.js" />
+    <Content Include="js\locales\bootstrap-datetimepicker.no.js" />
+    <Content Include="js\locales\bootstrap-datetimepicker.pl.js" />
+    <Content Include="js\locales\bootstrap-datetimepicker.pt-BR.js" />
+    <Content Include="js\locales\bootstrap-datetimepicker.pt.js" />
+    <Content Include="js\locales\bootstrap-datetimepicker.ro.js" />
+    <Content Include="js\locales\bootstrap-datetimepicker.rs-latin.js" />
+    <Content Include="js\locales\bootstrap-datetimepicker.rs.js" />
+    <Content Include="js\locales\bootstrap-datetimepicker.ru.js" />
+    <Content Include="js\locales\bootstrap-datetimepicker.sk.js" />
+    <Content Include="js\locales\bootstrap-datetimepicker.sl.js" />
+    <Content Include="js\locales\bootstrap-datetimepicker.sv.js" />
+    <Content Include="js\locales\bootstrap-datetimepicker.sw.js" />
+    <Content Include="js\locales\bootstrap-datetimepicker.th.js" />
+    <Content Include="js\locales\bootstrap-datetimepicker.tr.js" />
+    <Content Include="js\locales\bootstrap-datetimepicker.ua.js" />
+    <Content Include="js\locales\bootstrap-datetimepicker.uk.js" />
+    <Content Include="js\locales\bootstrap-datetimepicker.zh-CN.js" />
+    <Content Include="js\locales\bootstrap-datetimepicker.zh-TW.js" />
+    <Content Include="js\moment-with-locales.js" />
+    <Content Include="js\moment-with-locales.min.js" />
+    <Content Include="js\moment.js" />
+    <Content Include="js\moment.min.js" />
+    <Content Include="plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="plugins\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="plugins\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="plugins\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="plugins\font-awesome-4.7.0\less\core.less" />
+    <Content Include="plugins\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="plugins\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="plugins\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="plugins\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="plugins\font-awesome-4.7.0\less\list.less" />
+    <Content Include="plugins\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="plugins\font-awesome-4.7.0\less\path.less" />
+    <Content Include="plugins\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="plugins\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="plugins\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="plugins\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="plugins\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="plugins\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="plugins\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="plugins\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="plugins\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="plugins\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="plugins\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="plugins\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="plugins\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="plugins\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="plugins\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="plugins\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="plugins\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="plugins\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="less\datetimepicker.less" />
+    <Content Include="fonts\poppins\Poppins-Black.ttf" />
+    <Content Include="fonts\poppins\Poppins-BlackItalic.ttf" />
+    <Content Include="fonts\poppins\Poppins-Bold.ttf" />
+    <Content Include="fonts\poppins\Poppins-BoldItalic.ttf" />
+    <Content Include="fonts\poppins\Poppins-ExtraBold.ttf" />
+    <Content Include="fonts\poppins\Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="fonts\poppins\Poppins-ExtraLight.ttf" />
+    <Content Include="fonts\poppins\Poppins-ExtraLightItalic.ttf" />
+    <Content Include="fonts\poppins\Poppins-Italic.ttf" />
+    <Content Include="fonts\poppins\Poppins-Light.ttf" />
+    <Content Include="fonts\poppins\Poppins-LightItalic.ttf" />
+    <Content Include="fonts\poppins\Poppins-Medium.ttf" />
+    <Content Include="fonts\poppins\Poppins-MediumItalic.ttf" />
+    <Content Include="fonts\poppins\Poppins-Regular.ttf" />
+    <Content Include="fonts\poppins\Poppins-SemiBold.ttf" />
+    <Content Include="fonts\poppins\Poppins-SemiBoldItalic.ttf" />
+    <Content Include="fonts\poppins\Poppins-Thin.ttf" />
+    <Content Include="fonts\poppins\Poppins-ThinItalic.ttf" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="js\about.js" />
+    <Content Include="js\contact.js" />
+    <Content Include="js\custom.js" />
+    <Content Include="js\elements.js" />
+    <Content Include="js\jquery-3.2.1.min.js" />
+    <Content Include="js\news.js" />
+    <Content Include="js\properties.js" />
+    <Content Include="js\property.js" />
+    <Content Include="plugins\easing\easing.js" />
+    <Content Include="plugins\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="plugins\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="plugins\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="plugins\greensock\animation.gsap.min.js" />
+    <Content Include="plugins\greensock\ScrollToPlugin.min.js" />
+    <Content Include="plugins\greensock\TimelineMax.min.js" />
+    <Content Include="plugins\greensock\TweenMax.min.js" />
+    <Content Include="plugins\jquery-circle-progress-1.2.2\circle-progress.js" />
+    <Content Include="plugins\OwlCarousel2-2.2.1\ajax-loader.gif" />
+    <Content Include="plugins\OwlCarousel2-2.2.1\animate.css" />
+    <Content Include="plugins\OwlCarousel2-2.2.1\owl.carousel.css" />
+    <Content Include="plugins\OwlCarousel2-2.2.1\owl.carousel.js" />
+    <Content Include="plugins\OwlCarousel2-2.2.1\owl.theme.default.css" />
+    <Content Include="plugins\OwlCarousel2-2.2.1\owl.video.play.png" />
+    <Content Include="plugins\parallax-js-master\parallax.min.js" />
+    <Content Include="plugins\progressbar\progressbar.min.js" />
+    <Content Include="plugins\rangeslider.js-2.3.0\rangeslider.css" />
+    <Content Include="plugins\rangeslider.js-2.3.0\rangeslider.min.js" />
+    <Content Include="plugins\scrollmagic\ScrollMagic.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Site.Master" />
+    <Content Include="styles\about.css" />
+    <Content Include="styles\about_responsive.css" />
+    <Content Include="styles\bootstrap-datetimepicker.css" />
+    <Content Include="styles\bootstrap-datetimepicker.min.css" />
+    <Content Include="styles\bootstrap4\bootstrap.min.css" />
+    <Content Include="styles\bootstrap4\bootstrap.min.js" />
+    <Content Include="styles\bootstrap4\popper.js" />
+    <Content Include="styles\contact.css" />
+    <Content Include="styles\contact_responsive.css" />
+    <Content Include="styles\elements.css" />
+    <Content Include="styles\elements_responsive.css" />
+    <Content Include="styles\main_styles.css" />
+    <Content Include="styles\news.css" />
+    <Content Include="styles\news_responsive.css" />
+    <Content Include="styles\properties.css" />
+    <Content Include="styles\properties_responsive.css" />
+    <Content Include="styles\property.css" />
+    <Content Include="styles\property_responsive.css" />
+    <Content Include="styles\responsive.css" />
+    <Content Include="vendor\animate\animate.css" />
+    <Content Include="vendor\animsition\css\animsition.css" />
+    <Content Include="vendor\animsition\css\animsition.min.css" />
+    <Content Include="vendor\animsition\js\animsition.js" />
+    <Content Include="vendor\animsition\js\animsition.min.js" />
+    <Content Include="vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="vendor\bootstrap\js\popper.js" />
+    <Content Include="vendor\bootstrap\js\popper.min.js" />
+    <Content Include="vendor\bootstrap\js\tooltip.js" />
+    <Content Include="vendor\countdowntime\countdowntime.js" />
+    <Content Include="vendor\css-hamburgers\hamburgers.css" />
+    <Content Include="vendor\css-hamburgers\hamburgers.min.css" />
+    <Content Include="vendor\daterangepicker\daterangepicker.css" />
+    <Content Include="vendor\daterangepicker\daterangepicker.js" />
+    <Content Include="vendor\daterangepicker\moment.js" />
+    <Content Include="vendor\daterangepicker\moment.min.js" />
+    <Content Include="vendor\jquery\jquery-3.2.1.min.js" />
+    <Content Include="vendor\perfect-scrollbar\perfect-scrollbar.css" />
+    <Content Include="vendor\perfect-scrollbar\perfect-scrollbar.min.js" />
+    <Content Include="vendor\select2\select2.css" />
+    <Content Include="vendor\select2\select2.js" />
+    <Content Include="vendor\select2\select2.min.css" />
+    <Content Include="vendor\select2\select2.min.js" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config" />
+    <Content Include="Bundle.config" />
+    <Content Include="Site.Mobile.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="ContactUs.aspx.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactUs.aspx.designer.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistrationEntry.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="styles\bootstrap-datetimepicker-build.less" />
+    <Content Include="vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="vendor\bootstrap\css\bootstrap.min.css.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>65083</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:65083/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
